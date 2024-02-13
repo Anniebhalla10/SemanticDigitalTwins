@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="de-DE" class="theme-forgejo-auto">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>project/output.ifcowl an ifc2rdf - project - Degú</title>
+	<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiRGVnw7oiLCJzaG9ydF9uYW1lIjoiRGVnw7oiLCJzdGFydF91cmwiOiJodHRwczovL2dpdC5kZWd1LmNsLyIsImljb25zIjpbeyJzcmMiOiJodHRwczovL2dpdC5kZWd1LmNsL2Fzc2V0cy9pbWcvbG9nby5wbmciLCJ0eXBlIjoiaW1hZ2UvcG5nIiwic2l6ZXMiOiI1MTJ4NTEyIn0seyJzcmMiOiJodHRwczovL2dpdC5kZWd1LmNsL2Fzc2V0cy9pbWcvbG9nby5zdmciLCJ0eXBlIjoiaW1hZ2Uvc3ZnK3htbCIsInNpemVzIjoiNTEyeDUxMiJ9XX0=">
+	<meta name="author" content="DigitalTwinsLab2023">
+	<meta name="description" content="project - Digital Twins 2023 Project">
+	<meta name="keywords" content="git,forge,forgejo">
+	<meta name="referrer" content="no-referrer">
+
+
+	<link rel="alternate" type="application/atom+xml" title="" href="/DigitalTwinsLab2023/project.atom">
+	<link rel="alternate" type="application/rss+xml" title="" href="/DigitalTwinsLab2023/project.rss">
+
+	<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+	<link rel="alternate icon" href="/assets/img/favicon.png" type="image/png">
+	
+<script>
+	window.addEventListener('error', function(e) {window._globalHandlerErrors=window._globalHandlerErrors||[]; window._globalHandlerErrors.push(e);});
+	window.config = {
+		appUrl: 'https:\/\/git.degu.cl\/',
+		appSubUrl: '',
+		assetVersionEncoded: encodeURIComponent('1.20.5~0'), 
+		assetUrlPrefix: '\/assets',
+		runModeIsProd:  true ,
+		customEmojis: {"codeberg":":codeberg:","forgejo":":forgejo:","git":":git:","gitea":":gitea:","github":":github:","gitlab":":gitlab:","gogs":":gogs:"},
+		csrfToken: 'yBzZuEuNbfH2UoZriqE52-sdnGc6MTcwMDY0NDYxNzA5OTg4NjA5Mw',
+		pageData: {},
+		notificationSettings: {"EventSourceUpdateTime":10000,"MaxTimeout":60000,"MinTimeout":10000,"TimeoutStep":10000}, 
+		enableTimeTracking:  true ,
+		
+		mermaidMaxSourceCharacters:  5000 ,
+		
+		i18n: {
+			copy_success: 'Kopiert!',
+			copy_error: 'Kopieren fehlgeschlagen',
+			error_occurred: 'Ein Fehler ist aufgetreten',
+			network_error: 'Netzwerkfehler',
+			remove_label_str: 'Element \u0022%s \u0022 entfernen',
+		},
+	};
+	
+	window.config.pageData = window.config.pageData || {};
+</script>
+<script src="/assets/js/webcomponents.js?v=1.20.5~0"></script>
+
+	<noscript>
+		<style>
+			.dropdown:hover > .menu { display: block; }
+			.ui.secondary.menu .dropdown.item > .menu { margin-top: 0; }
+		</style>
+	</noscript>
+
+	
+		<meta property="og:title" content="project">
+		<meta property="og:url" content="https://git.degu.cl/DigitalTwinsLab2023/project">
+		
+			<meta property="og:description" content="Digital Twins 2023 Project">
+		
+	
+	<meta property="og:type" content="object">
+	
+		<meta property="og:image" content="https://git.degu.cl/avatars/7c744a9b8eda1453b1285bcaf2867fb4">
+	
+
+	<meta property="og:site_name" content="Degú">
+	<link rel="stylesheet" href="/assets/css/index.css?v=1.20.5~0">
+
+	
+		<link rel="stylesheet" href="/assets/css/theme-forgejo-auto.css?v=1.20.5~0">
+	
+
+
+	
+</head>
+<body>
+	
+
+	<div class="full height">
+		<noscript>Diese Website benötigt JavaScript.</noscript>
+
+		
+
+		
+			
+
+	
+
+
+<nav id="navbar" class="ui secondary stackable menu" aria-label="Navigationsleiste">
+	<div class="item">
+		
+		<a href="/" aria-label="Übersicht">
+			<img width="30" height="30" src="/assets/img/logo.svg" alt="Logo" aria-hidden="true">
+		</a>
+
+		
+		<div class="ui secondary menu navbar-mobile-right gt-gap-2">
+			
+			<a class="item gt-mx-0 gt-p-3" href="/notifications" data-tooltip-content="Benachrichtigungen" aria-label="Benachrichtigungen">
+				<div class="gt-relative">
+					<svg viewBox="0 0 16 16" class="svg octicon-bell" width="16" height="16" aria-hidden="true"><path d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16ZM3 5a5 5 0 0 1 10 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.255.255 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.017.017 0 0 0-.003.01l.001.006c0 .002.002.004.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007a.017.017 0 0 0-.003-.01l-1.703-2.554a1.745 1.745 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5Z"/></svg>
+					<span class="notification_count">1</span>
+				</div>
+			</a>
+			
+			<button class="item ui icon mini button gt-p-3 gt-m-0" id="navbar-expand-toggle"><svg viewBox="0 0 16 16" class="svg octicon-three-bars" width="16" height="16" aria-hidden="true"><path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z"/></svg></button>
+		</div>
+	</div>
+
+	
+	
+		
+			<a class="item" href="/issues">Issues</a>
+		
+		
+			<a class="item" href="/pulls">Pull-Requests</a>
+		
+		
+			
+				<a class="item" href="/milestones">Meilensteine</a>
+			
+		
+		<a class="item" href="/explore/repos">Erkunden</a>
+	
+
+	
+
+	
+
+	
+	<div class="right menu">
+		
+			
+			<a class="active-stopwatch-trigger item ui gt-mx-0 gt-hidden" href="" title="Aktive Zeiterfassung">
+				<div class="gt-relative">
+					<svg viewBox="0 0 16 16" class="svg octicon-stopwatch" width="16" height="16" aria-hidden="true"><path d="M5.75.75A.75.75 0 0 1 6.5 0h3a.75.75 0 0 1 0 1.5h-.75v1l-.001.041a6.724 6.724 0 0 1 3.464 1.435l.007-.006.75-.75a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734l-.75.75-.006.007a6.75 6.75 0 1 1-10.548 0L2.72 5.03l-.75-.75a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l.75.75.007.006A6.72 6.72 0 0 1 7.25 2.541V1.5H6.5a.75.75 0 0 1-.75-.75ZM8 14.5a5.25 5.25 0 1 0-.001-10.501A5.25 5.25 0 0 0 8 14.5Zm.389-6.7 1.33-1.33a.75.75 0 1 1 1.061 1.06L9.45 8.861A1.503 1.503 0 0 1 8 10.75a1.499 1.499 0 1 1 .389-2.95Z"/></svg>
+					<span class="header-stopwatch-dot"></span>
+				</div>
+				<span class="mobile-only gt-ml-2">Aktive Zeiterfassung</span>
+			</a>
+			<div class="active-stopwatch-popup tippy-target gt-p-3">
+				<div class="gt-df gt-ac">
+					<a class="stopwatch-link gt-df gt-ac" href="">
+						<svg viewBox="0 0 16 16" class="gt-mr-3 svg octicon-issue-opened" width="16" height="16" aria-hidden="true"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/></svg>
+						<span class="stopwatch-issue">#</span>
+						<span class="ui primary label stopwatch-time gt-my-0 gt-mx-4" data-seconds="">
+							
+						</span>
+					</a>
+					<form class="stopwatch-commit" method="POST" action="/times/stopwatch/toggle">
+						<input type="hidden" name="_csrf" value="yBzZuEuNbfH2UoZriqE52-sdnGc6MTcwMDY0NDYxNzA5OTg4NjA5Mw">
+						<button
+							type="submit"
+							class="ui button mini compact basic icon"
+							data-tooltip-content="Zeiterfassung stoppen"
+						><svg viewBox="0 0 16 16" class="svg octicon-square-fill" width="16" height="16" aria-hidden="true"><path d="M5.75 4h4.5c.966 0 1.75.784 1.75 1.75v4.5A1.75 1.75 0 0 1 10.25 12h-4.5A1.75 1.75 0 0 1 4 10.25v-4.5C4 4.784 4.784 4 5.75 4Z"/></svg></button>
+					</form>
+					<form class="stopwatch-cancel" method="POST" action="/times/stopwatch/cancel">
+						<input type="hidden" name="_csrf" value="yBzZuEuNbfH2UoZriqE52-sdnGc6MTcwMDY0NDYxNzA5OTg4NjA5Mw">
+						<button
+							type="submit"
+							class="ui button mini compact basic icon"
+							data-tooltip-content="Verwerfen"
+						><svg viewBox="0 0 16 16" class="svg octicon-trash" width="16" height="16" aria-hidden="true"><path d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"/></svg></button>
+					</form>
+				</div>
+			</div>
+			
+
+			<a href="/notifications" class="item not-mobile gt-mx-0" data-tooltip-content="Benachrichtigungen" aria-label="Benachrichtigungen">
+				<div class="gt-relative">
+					<svg viewBox="0 0 16 16" class="svg octicon-bell" width="16" height="16" aria-hidden="true"><path d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16ZM3 5a5 5 0 0 1 10 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.255.255 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.017.017 0 0 0-.003.01l.001.006c0 .002.002.004.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007a.017.017 0 0 0-.003-.01l-1.703-2.554a1.745 1.745 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5Z"/></svg>
+					<span class="notification_count">1</span>
+				</div>
+			</a>
+
+			<div class="ui dropdown jump item gt-mx-0 gt-pr-3" data-tooltip-content="Erstellen…">
+				<span class="text">
+					<svg viewBox="0 0 16 16" class="svg octicon-plus" width="16" height="16" aria-hidden="true"><path d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z"/></svg>
+					<span class="not-mobile"><svg viewBox="0 0 16 16" class="svg octicon-triangle-down" width="16" height="16" aria-hidden="true"><path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg></span>
+					<span class="mobile-only">Erstellen…</span>
+				</span>
+				<div class="menu">
+					<a class="item" href="/repo/create">
+						<svg viewBox="0 0 16 16" class="svg octicon-plus" width="16" height="16" aria-hidden="true"><path d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z"/></svg> Neues Repository
+					</a>
+					
+						<a class="item" href="/repo/migrate">
+							<svg viewBox="0 0 16 16" class="svg octicon-repo-push" width="16" height="16" aria-hidden="true"><path d="M1 2.5A2.5 2.5 0 0 1 3.5 0h8.75a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0V1.5h-8a1 1 0 0 0-1 1v6.708A2.493 2.493 0 0 1 3.5 9h3.25a.75.75 0 0 1 0 1.5H3.5a1 1 0 0 0 0 2h5.75a.75.75 0 0 1 0 1.5H3.5A2.5 2.5 0 0 1 1 11.5Zm13.23 7.79h-.001l-1.224-1.224v6.184a.75.75 0 0 1-1.5 0V9.066L10.28 10.29a.75.75 0 0 1-1.06-1.061l2.505-2.504a.75.75 0 0 1 1.06 0L15.29 9.23a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018Z"/></svg> Neue Migration
+						</a>
+					
+					
+				</div>
+			</div>
+
+			<div class="ui dropdown jump item gt-mx-0 gt-pr-3" data-tooltip-content="Profil und Einstellungen…">
+				<span class="text gt-df gt-ac">
+					<img class="ui avatar gt-vm gt-mr-2" src="/avatar/8a1a3782f9cc250dcf2996ed92249a20?size=48" title="HaominShi" width="24" height="24"/>
+					<span class="mobile-only gt-ml-2">HaominShi</span>
+					<span class="not-mobile"><svg viewBox="0 0 16 16" class="svg octicon-triangle-down" width="16" height="16" aria-hidden="true"><path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg></span>
+				</span>
+				<div class="menu user-menu">
+					<div class="ui header">
+						Angemeldet als <strong>HaominShi</strong>
+					</div>
+
+					<div class="divider"></div>
+					<a class="item" href="/HaominShi">
+						<svg viewBox="0 0 16 16" class="svg octicon-person" width="16" height="16" aria-hidden="true"><path d="M10.561 8.073a6.005 6.005 0 0 1 3.432 5.142.75.75 0 1 1-1.498.07 4.5 4.5 0 0 0-8.99 0 .75.75 0 0 1-1.498-.07 6.004 6.004 0 0 1 3.431-5.142 3.999 3.999 0 1 1 5.123 0ZM10.5 5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/></svg>
+						Profil
+					</a>
+					
+						<a class="item" href="/HaominShi?tab=stars">
+							<svg viewBox="0 0 16 16" class="svg octicon-star" width="16" height="16" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"/></svg>
+							Favoriten
+						</a>
+					
+					<a class="item" href="/notifications/subscriptions">
+						<svg viewBox="0 0 16 16" class="svg octicon-bell" width="16" height="16" aria-hidden="true"><path d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16ZM3 5a5 5 0 0 1 10 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.255.255 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.017.017 0 0 0-.003.01l.001.006c0 .002.002.004.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007a.017.017 0 0 0-.003-.01l-1.703-2.554a1.745 1.745 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5Z"/></svg>
+						Abonnements
+					</a>
+					<a class="item" href="/user/settings">
+						<svg viewBox="0 0 16 16" class="svg octicon-tools" width="16" height="16" aria-hidden="true"><path d="M5.433 2.304A4.492 4.492 0 0 0 3.5 6c0 1.598.832 3.002 2.09 3.802.518.328.929.923.902 1.64v.008l-.164 3.337a.75.75 0 1 1-1.498-.073l.163-3.33c.002-.085-.05-.216-.207-.316A5.996 5.996 0 0 1 2 6a5.993 5.993 0 0 1 2.567-4.92 1.482 1.482 0 0 1 1.673-.04c.462.296.76.827.76 1.423v2.82c0 .082.041.16.11.206l.75.51a.25.25 0 0 0 .28 0l.75-.51A.249.249 0 0 0 9 5.282V2.463c0-.596.298-1.127.76-1.423a1.482 1.482 0 0 1 1.673.04A5.993 5.993 0 0 1 14 6a5.996 5.996 0 0 1-2.786 5.068c-.157.1-.209.23-.207.315l.163 3.33a.752.752 0 0 1-1.094.714.75.75 0 0 1-.404-.64l-.164-3.345c-.027-.717.384-1.312.902-1.64A4.495 4.495 0 0 0 12.5 6a4.492 4.492 0 0 0-1.933-3.696c-.024.017-.067.067-.067.16v2.818a1.75 1.75 0 0 1-.767 1.448l-.75.51a1.75 1.75 0 0 1-1.966 0l-.75-.51A1.75 1.75 0 0 1 5.5 5.282V2.463c0-.092-.043-.142-.067-.159Z"/></svg>
+						Einstellungen
+					</a>
+					<a class="item" target="_blank" rel="noopener noreferrer" href="https://forgejo.org/docs/latest/">
+						<svg viewBox="0 0 16 16" class="svg octicon-question" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.92 6.085h.001a.749.749 0 1 1-1.342-.67c.169-.339.436-.701.849-.977C6.845 4.16 7.369 4 8 4a2.756 2.756 0 0 1 1.637.525c.503.377.863.965.863 1.725 0 .448-.115.83-.329 1.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6.24 6.24 0 0 0-.26.16.952.952 0 0 0-.276.245.75.75 0 0 1-1.248-.832c.184-.264.42-.489.692-.661.103-.067.207-.132.313-.195l.007-.004c.1-.061.182-.11.258-.161a.969.969 0 0 0 .277-.245C8.96 6.514 9 6.427 9 6.25a.612.612 0 0 0-.262-.525A1.27 1.27 0 0 0 8 5.5c-.369 0-.595.09-.74.187a1.01 1.01 0 0 0-.34.398ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>
+						Hilfe
+					</a>
+					
+
+					<div class="divider"></div>
+					<a class="item link-action" href data-url="/user/logout" data-redirect="/">
+						<svg viewBox="0 0 16 16" class="svg octicon-sign-out" width="16" height="16" aria-hidden="true"><path d="M2 2.75C2 1.784 2.784 1 3.75 1h2.5a.75.75 0 0 1 0 1.5h-2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h2.5a.75.75 0 0 1 0 1.5h-2.5A1.75 1.75 0 0 1 2 13.25Zm10.44 4.5-1.97-1.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.97-1.97H6.75a.75.75 0 0 1 0-1.5Z"/></svg>
+						Abmelden
+					</a>
+				</div>
+			</div>
+		
+	</div>
+</nav>
+
+		
+
+
+
+<div role="main" aria-label="project/output.ifcowl an ifc2rdf" class="page-content repository file list ">
+	<div class="header-wrapper">
+
+	<div class="ui container">
+		<div class="repo-header">
+			<div class="repo-title-wrap gt-df gt-fc">
+				<div class="repo-title" role="heading" aria-level="1">
+					
+					
+						<div class="repo-icon gt-mr-3">
+	
+		
+			<svg viewBox="0 0 16 16" class="svg octicon-lock" width="32" height="32" aria-hidden="true"><path d="M4 4a4 4 0 0 1 8 0v2h.25c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.25v-5.5C2 6.784 2.784 6 3.75 6H4Zm8.25 3.5h-8.5a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25ZM10.5 6V4a2.5 2.5 0 1 0-5 0v2Z"/></svg>
+		
+	
+</div>
+
+					
+					<a href="/DigitalTwinsLab2023">DigitalTwinsLab2023</a>
+					<div class="gt-mx-2">/</div>
+					<a href="/DigitalTwinsLab2023/project">project</a>
+					<div class="labels gt-df gt-ac gt-fw">
+						
+							
+								<span class="ui basic label">Privat</span>
+							
+						
+						
+					</div>
+					
+						<a class="rss-icon gt-ml-3" href="/DigitalTwinsLab2023/project.rss" data-tooltip-content="RSS Feed"><svg viewBox="0 0 16 16" class="svg octicon-rss" width="18" height="18" aria-hidden="true"><path d="M2.002 2.725a.75.75 0 0 1 .797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 0 1-1.497.098 10.502 10.502 0 0 0-9.776-9.776.747.747 0 0 1-.7-.798ZM2.84 7.05h-.002a7.002 7.002 0 0 1 6.113 6.111.75.75 0 0 1-1.49.178 5.503 5.503 0 0 0-4.8-4.8.75.75 0 0 1 .179-1.489ZM2 13a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"/></svg></a>
+					
+				</div>
+				
+				
+				
+			</div>
+			
+				<div class="repo-buttons">
+					
+					<form method="post" action="/DigitalTwinsLab2023/project/action/unwatch?redirect_to=%2fDigitalTwinsLab2023%2fproject%2fsrc%2fbranch%2fifc2rdf%2foutput.ifcowl">
+						<input type="hidden" name="_csrf" value="yBzZuEuNbfH2UoZriqE52-sdnGc6MTcwMDY0NDYxNzA5OTg4NjA5Mw">
+						<div class="ui labeled button" >
+							<button type="submit" class="ui compact small basic button">
+								<svg viewBox="0 0 16 16" class="svg octicon-eye-closed" width="16" height="16" aria-hidden="true"><path d="M.143 2.31a.75.75 0 0 1 1.047-.167l14.5 10.5a.75.75 0 1 1-.88 1.214l-2.248-1.628C11.346 13.19 9.792 14 8 14c-1.981 0-3.67-.992-4.933-2.078C1.797 10.832.88 9.577.43 8.9a1.619 1.619 0 0 1 0-1.797c.353-.533.995-1.42 1.868-2.305L.31 3.357A.75.75 0 0 1 .143 2.31Zm1.536 5.622A.12.12 0 0 0 1.657 8c0 .021.006.045.022.068.412.621 1.242 1.75 2.366 2.717C5.175 11.758 6.527 12.5 8 12.5c1.195 0 2.31-.488 3.29-1.191L9.063 9.695A2 2 0 0 1 6.058 7.52L3.529 5.688a14.207 14.207 0 0 0-1.85 2.244ZM8 3.5c-.516 0-1.017.09-1.499.251a.75.75 0 1 1-.473-1.423A6.207 6.207 0 0 1 8 2c1.981 0 3.67.992 4.933 2.078 1.27 1.091 2.187 2.345 2.637 3.023a1.62 1.62 0 0 1 0 1.798c-.11.166-.248.365-.41.587a.75.75 0 1 1-1.21-.887c.148-.201.272-.382.371-.53a.119.119 0 0 0 0-.137c-.412-.621-1.242-1.75-2.366-2.717C10.825 4.242 9.473 3.5 8 3.5Z"/></svg>Beobachten beenden
+							</button>
+							<a class="ui basic label" href="/DigitalTwinsLab2023/project/watchers">
+								13
+							</a>
+						</div>
+					</form>
+					
+						<form method="post" action="/DigitalTwinsLab2023/project/action/star?redirect_to=%2fDigitalTwinsLab2023%2fproject%2fsrc%2fbranch%2fifc2rdf%2foutput.ifcowl">
+							<input type="hidden" name="_csrf" value="yBzZuEuNbfH2UoZriqE52-sdnGc6MTcwMDY0NDYxNzA5OTg4NjA5Mw">
+							<div class="ui labeled button" >
+								<button type="submit" class="ui compact small basic button">
+									<svg viewBox="0 0 16 16" class="svg octicon-star" width="16" height="16" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"/></svg>Favorisieren
+								</button>
+								<a class="ui basic label" href="/DigitalTwinsLab2023/project/stars">
+									0
+								</a>
+							</div>
+						</form>
+					
+					
+						<div class="ui labeled button
+							"
+							
+						>
+							<a class="ui compact small basic button"
+								
+									href="/repo/fork/4"
+								
+							>
+								<svg viewBox="0 0 16 16" class="svg octicon-repo-forked" width="16" height="16" aria-hidden="true"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/></svg>Fork
+							</a>
+							<div class="ui small modal" id="fork-repo-modal">
+								<div class="header">
+									Du hast bereits einen Fork von project erstellt
+								</div>
+								<div class="content gt-text-left">
+									<div class="ui list">
+										
+									</div>
+									
+									<div class="ui divider"></div>
+									<a href="/repo/fork/4">
+										Fork in ein anderes Konto erstellen
+									</a>
+									
+								</div>
+							</div>
+							<a class="ui basic label" href="/DigitalTwinsLab2023/project/forks">
+								2
+							</a>
+						</div>
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="ui tabs container">
+		
+			<div class="ui tabular menu navbar gt-overflow-x-auto gt-overflow-y-hidden">
+				
+				<a class="active item" href="/DigitalTwinsLab2023/project/src/branch/ifc2rdf">
+					<svg viewBox="0 0 16 16" class="svg octicon-code" width="16" height="16" aria-hidden="true"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215Zm-6.56 0a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg> Code
+				</a>
+				
+
+				
+					<a class="item" href="/DigitalTwinsLab2023/project/issues">
+						<svg viewBox="0 0 16 16" class="svg octicon-issue-opened" width="16" height="16" aria-hidden="true"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/></svg> Issues
+						
+							<span class="ui small label">3</span>
+						
+					</a>
+				
+
+				
+
+				
+					<a class="item" href="/DigitalTwinsLab2023/project/pulls">
+						<svg viewBox="0 0 16 16" class="svg octicon-git-pull-request" width="16" height="16" aria-hidden="true"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"/></svg> Pull-Requests
+						
+					</a>
+				
+
+				
+
+				
+					<a href="/DigitalTwinsLab2023/project/packages" class="item">
+						<svg viewBox="0 0 16 16" class="svg octicon-package" width="16" height="16" aria-hidden="true"><path d="m8.878.392 5.25 3.045c.54.314.872.89.872 1.514v6.098a1.75 1.75 0 0 1-.872 1.514l-5.25 3.045a1.75 1.75 0 0 1-1.756 0l-5.25-3.045A1.75 1.75 0 0 1 1 11.049V4.951c0-.624.332-1.201.872-1.514L7.122.392a1.75 1.75 0 0 1 1.756 0ZM7.875 1.69l-4.63 2.685L8 7.133l4.755-2.758-4.63-2.685a.248.248 0 0 0-.25 0ZM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432Zm6.25 8.271 4.625-2.683a.25.25 0 0 0 .125-.216V5.677L8.75 8.432Z"/></svg> Pakete
+					</a>
+				
+
+				
+					<a href="/DigitalTwinsLab2023/project/projects" class="item">
+						<svg viewBox="0 0 16 16" class="svg octicon-project" width="16" height="16" aria-hidden="true"><path d="M1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0 1 14.25 16H1.75A1.75 1.75 0 0 1 0 14.25V1.75C0 .784.784 0 1.75 0ZM1.5 1.75v12.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25ZM11.75 3a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-1.5 0v-7.5a.75.75 0 0 1 .75-.75Zm-8.25.75a.75.75 0 0 1 1.5 0v5.5a.75.75 0 0 1-1.5 0ZM8 3a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 3Z"/></svg> Projekte
+						
+					</a>
+				
+
+				
+				<a class="item" href="/DigitalTwinsLab2023/project/releases">
+					<svg viewBox="0 0 16 16" class="svg octicon-tag" width="16" height="16" aria-hidden="true"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg> Releases
+					
+				</a>
+				
+
+				
+					<a class="item" href="/DigitalTwinsLab2023/project/wiki">
+						<svg viewBox="0 0 16 16" class="svg octicon-book" width="16" height="16" aria-hidden="true"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"/></svg> Wiki
+					</a>
+				
+
+				
+
+				
+					<a class="item" href="/DigitalTwinsLab2023/project/activity">
+						<svg viewBox="0 0 16 16" class="svg octicon-pulse" width="16" height="16" aria-hidden="true"><path d="M6 2c.306 0 .582.187.696.471L10 10.731l1.304-3.26A.751.751 0 0 1 12 7h3.25a.75.75 0 0 1 0 1.5h-2.742l-1.812 4.528a.751.751 0 0 1-1.392 0L6 4.77 4.696 8.03A.75.75 0 0 1 4 8.5H.75a.75.75 0 0 1 0-1.5h2.742l1.812-4.529A.751.751 0 0 1 6 2Z"/></svg> Aktivität
+					</a>
+				
+
+				
+
+				
+			</div>
+		
+	</div>
+	<div class="ui tabs divider"></div>
+</div>
+
+	<div class="ui container ">
+		
+
+
+
+
+		
+		
+		
+		
+
+		<div class="repo-button-row">
+			<div class="gt-df gt-ac gt-fw gt-gap-y-3">
+				
+
+
+
+
+
+
+	
+
+
+
+
+<script type="module">
+	const data = {
+		'textReleaseCompare': "Vergleichen",
+		'textCreateTag': "Tag \u003cstrong\u003e%s\u003c/strong\u003e erstellen",
+		'textCreateBranch': "Erstelle Branch \u003cstrong\u003e%s\u003c/strong\u003e",
+		'textCreateBranchFrom': "von \"%s\"",
+		'textBranches': "Branches",
+		'textTags': "Tags",
+
+		'mode': 'branches',
+		'showBranchesInDropdown':  true ,
+		'searchFieldPlaceholder': 'Branch oder Tag filtern...',
+		'branchForm':  null ,
+		'disableCreateBranch':  false ,
+		'setAction':  null ,
+		'submitForm':  null ,
+		'viewType': "branch",
+		'refName': "ifc2rdf",
+		'commitIdShort': "366b262b00",
+		'tagName': "",
+		'branchName': "ifc2rdf",
+		'noTag':  null ,
+		'branches': ["ifc2rdf","feat/group-b-visualizations","main"],
+		'tags': [],
+		'defaultBranch': "ifc2rdf",
+		'enableFeed':  true ,
+		'rssURLPrefix': '\/DigitalTwinsLab2023\/project/rss/branch/',
+		'branchURLPrefix': '\/DigitalTwinsLab2023\/project/src/branch/',
+		'branchURLSuffix': '/output.ifcowl',
+		'tagURLPrefix': '\/DigitalTwinsLab2023\/project/src/tag/',
+		'tagURLSuffix': '/output.ifcowl',
+		'repoLink': "/DigitalTwinsLab2023/project",
+		'treePath': "output.ifcowl",
+		'branchNameSubURL': "branch/ifc2rdf",
+		'noResults': "Keine Ergebnisse verfügbar.",
+	};
+	
+	window.config.pageData.branchDropdownDataList = window.config.pageData.branchDropdownDataList || [];
+	window.config.pageData.branchDropdownDataList.push(data);
+</script>
+
+<div class="js-branch-tag-selector gt-mr-2">
+	
+	<div class="ui floating filter dropdown custom">
+		<button class="branch-dropdown-button gt-ellipsis ui basic small compact button gt-df gt-m-0">
+			<span class="text gt-df gt-ac gt-mr-2">
+				
+					
+						<svg viewBox="0 0 16 16" class="svg octicon-git-branch" width="16" height="16" aria-hidden="true"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"/></svg>
+					
+					<strong ref="dropdownRefName" class="gt-ml-3">ifc2rdf</strong>
+				
+			</span>
+			<svg viewBox="0 0 16 16" class="dropdown icon svg octicon-triangle-down" width="14" height="14" aria-hidden="true"><path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg>
+		</button>
+	</div>
+</div>
+
+				
+					
+					
+					
+					
+					<a id="new-pull-request" role="button" class="ui compact basic button" href="/DigitalTwinsLab2023/project/compare/main...ifc2rdf"
+						data-tooltip-content="Neuer Pull-Request">
+						<svg viewBox="0 0 16 16" class="svg octicon-git-pull-request" width="16" height="16" aria-hidden="true"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"/></svg>
+					</a>
+				
+				
+				
+				
+				
+
+				
+
+				
+				
+					<span class="breadcrumb repo-path gt-ml-2">
+						<a class="section" href="/DigitalTwinsLab2023/project/src/branch/ifc2rdf" title="project">project</a><span class="divider">/</span><span class="active section" title="output.ifcowl">output.ifcowl</span></span>
+				
+			</div>
+			<div class="gt-df gt-ac">
+				
+				
+				
+			</div>
+		</div>
+		
+			<div class="tab-size-8 non-diff-file-content">
+	<h4 class="file-header ui top attached header gt-df gt-ac gt-sb gt-fw">
+		<div class="file-header-left gt-df gt-ac gt-py-3 gt-pr-4">
+			
+				<div class="file-info text grey normal gt-mono">
+	
+	
+	
+		<div class="file-info-entry">
+			11 MiB
+		</div>
+	
+	
+	
+	
+</div>
+
+			
+		</div>
+		<div class="file-header-right file-actions gt-df gt-ac gt-fw">
+			
+			
+				<div class="ui buttons gt-mr-2">
+					<a class="ui mini basic button" href="/DigitalTwinsLab2023/project/raw/branch/ifc2rdf/output.ifcowl">Originalformat</a>
+					
+						<a class="ui mini basic button" href="/DigitalTwinsLab2023/project/src/commit/366b262b00c7a086c736144df0409bb2ce3d4723/output.ifcowl">Permalink</a>
+					
+					
+						<a class="ui mini basic button" href="/DigitalTwinsLab2023/project/blame/branch/ifc2rdf/output.ifcowl">Blame</a>
+					
+					<a class="ui mini basic button" href="/DigitalTwinsLab2023/project/commits/branch/ifc2rdf/output.ifcowl">Verlauf</a>
+					
+				</div>
+				<a download href="/DigitalTwinsLab2023/project/raw/branch/ifc2rdf/output.ifcowl"><span class="btn-octicon" data-tooltip-content="Datei herunterladen"><svg viewBox="0 0 16 16" class="svg octicon-download" width="16" height="16" aria-hidden="true"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z"/></svg></span></a>
+				<a id="copy-content" class="btn-octicon " data-tooltip-content="Inhalt kopieren"><svg viewBox="0 0 16 16" class="svg octicon-copy" width="14" height="14" aria-hidden="true"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/></svg></a>
+				
+				<a class="btn-octicon" href="/DigitalTwinsLab2023/project/rss/branch/ifc2rdf/output.ifcowl"><svg viewBox="0 0 16 16" class="svg octicon-rss" width="14" height="14" aria-hidden="true"><path d="M2.002 2.725a.75.75 0 0 1 .797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 0 1-1.497.098 10.502 10.502 0 0 0-9.776-9.776.747.747 0 0 1-.7-.798ZM2.84 7.05h-.002a7.002 7.002 0 0 1 6.113 6.111.75.75 0 0 1-1.49.178 5.503 5.503 0 0 0-4.8-4.8.75.75 0 0 1 .179-1.489ZM2 13a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"/></svg></a>
+				
+				
+					
+						<span class="btn-octicon disabled" data-tooltip-content=""><svg viewBox="0 0 16 16" class="svg octicon-pencil" width="16" height="16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg></span>
+					
+					
+						<a href="/DigitalTwinsLab2023/project/_delete/ifc2rdf/output.ifcowl"><span class="btn-octicon btn-octicon-danger"  data-tooltip-content="Datei löschen"><svg viewBox="0 0 16 16" class="svg octicon-trash" width="16" height="16" aria-hidden="true"><path d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"/></svg></span></a>
+					
+				
+			
+		</div>
+	</h4>
+	<div class="ui attached table unstackable segment">
+		
+			
+
+		
+		<div class="file-view code-view">
+			
+				
+				<table>
+					<tbody>
+						<tr>
+							<td><strong>Die Datei ist zu groß zum Anzeigen.</strong></td>
+						</tr>
+					</tbody>
+				</table>
+				
+			
+		</div>
+	</div>
+</div>
+
+		
+	</div>
+</div>
+
+
+	
+
+	</div>
+
+	
+
+	<footer class="page-footer" role="group" aria-label="Fußzeile">
+	<div class="left-links" role="contentinfo" aria-label="Über die Software">
+		<a target="_blank" rel="noopener noreferrer" href="https://forgejo.org">Powered by Forgejo</a>
+		
+			Version:
+			
+				1.20.5&#43;0
+			
+		
+		
+			Seite: <strong>67ms</strong>
+			Template: <strong>2ms</strong>
+		
+	</div>
+	<div class="right-links" role="group" aria-label="Links">
+		<div class="ui dropdown upward language">
+			<span class="flex-text-inline"><svg viewBox="0 0 16 16" class="svg octicon-globe" width="14" height="14" aria-hidden="true"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.24.365.353.552.714 1.192 1.436 2.874 1.58 4.948Z"/></svg> Deutsch</span>
+			<div class="menu language-menu">
+				
+					<a lang="id-ID" data-url="/?lang=id-ID" class="item ">Bahasa Indonesia</a>
+				
+					<a lang="de-DE" data-url="/?lang=de-DE" class="item active selected">Deutsch</a>
+				
+					<a lang="en-US" data-url="/?lang=en-US" class="item ">English</a>
+				
+					<a lang="es-ES" data-url="/?lang=es-ES" class="item ">Español</a>
+				
+					<a lang="fr-FR" data-url="/?lang=fr-FR" class="item ">Français</a>
+				
+					<a lang="it-IT" data-url="/?lang=it-IT" class="item ">Italiano</a>
+				
+					<a lang="lv-LV" data-url="/?lang=lv-LV" class="item ">Latviešu</a>
+				
+					<a lang="hu-HU" data-url="/?lang=hu-HU" class="item ">Magyar nyelv</a>
+				
+					<a lang="nl-NL" data-url="/?lang=nl-NL" class="item ">Nederlands</a>
+				
+					<a lang="pl-PL" data-url="/?lang=pl-PL" class="item ">Polski</a>
+				
+					<a lang="pt-PT" data-url="/?lang=pt-PT" class="item ">Português de Portugal</a>
+				
+					<a lang="pt-BR" data-url="/?lang=pt-BR" class="item ">Português do Brasil</a>
+				
+					<a lang="fi-FI" data-url="/?lang=fi-FI" class="item ">Suomi</a>
+				
+					<a lang="sv-SE" data-url="/?lang=sv-SE" class="item ">Svenska</a>
+				
+					<a lang="tr-TR" data-url="/?lang=tr-TR" class="item ">Türkçe</a>
+				
+					<a lang="cs-CZ" data-url="/?lang=cs-CZ" class="item ">Čeština</a>
+				
+					<a lang="el-GR" data-url="/?lang=el-GR" class="item ">Ελληνικά</a>
+				
+					<a lang="bg-BG" data-url="/?lang=bg-BG" class="item ">Български</a>
+				
+					<a lang="ru-RU" data-url="/?lang=ru-RU" class="item ">Русский</a>
+				
+					<a lang="uk-UA" data-url="/?lang=uk-UA" class="item ">Українська</a>
+				
+					<a lang="fa-IR" data-url="/?lang=fa-IR" class="item ">فارسی</a>
+				
+					<a lang="ml-IN" data-url="/?lang=ml-IN" class="item ">മലയാളം</a>
+				
+					<a lang="ja-JP" data-url="/?lang=ja-JP" class="item ">日本語</a>
+				
+					<a lang="zh-CN" data-url="/?lang=zh-CN" class="item ">简体中文</a>
+				
+					<a lang="zh-TW" data-url="/?lang=zh-TW" class="item ">繁體中文（台灣）</a>
+				
+					<a lang="zh-HK" data-url="/?lang=zh-HK" class="item ">繁體中文（香港）</a>
+				
+					<a lang="ko-KR" data-url="/?lang=ko-KR" class="item ">한국어</a>
+				
+			</div>
+		</div>
+		<a href="/assets/js/licenses.txt">Lizenzen</a>
+		<a href="/api/swagger">API</a>
+		
+	</div>
+</footer>
+
+
+
+
+	<script src="/assets/js/index.js?v=1.20.5~0" onerror="alert('Failed to load asset files from ' + this.src + '. Please make sure the asset files can be accessed.')"></script>
+
+</body>
+</html>
+

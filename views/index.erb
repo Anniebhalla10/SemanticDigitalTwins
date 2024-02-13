@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantic Digital Twins</title>
+  <!-- font awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <!-- Bootstrap CSS CDN link -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+ <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- D3 js -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <link href="/css/index.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="root_container">
+
+    <!-- Side Bar -->
+    <div id="sideBar">
+      <span onclick="document.getElementById('ezpop').showModal()"><i class="fa fa-regular fa-upload fa-2x"
+          style="color: #ffffff;"></i></span>
+      <i class="fa fa-sharp fa-solid fa-code fa-2x" id="footerSlideButton" style="color: #ffffff;"></i>
+    </div>
+
+    <!-- Uploading IFC or RDF file to Graph DB -->
+    <dialog id="ezpop">
+   <form action="/upload" method="post" enctype="multipart/form-data" class="mb-4">
+      <div id="dialog_header">
+        <div id="eztxt" class="form-label">Upload</div>
+        <button id="ezclose" style="font-size: medium;" formmethod="dialog">X</button>
+      </div>
+      
+        <div class="form-group" style="margin-top: 8px;">
+          <label for="fileInput" class="form-label">Choose a file</label>
+          <input type="file" class="form-control" id="fileInput" name="fileInput" accept=".ifc, .rdf" >
+        </div>
+        <div class="form-group">
+          <label for="fileType" class="form-label">Select file type:</label>
+          <select class="form-control" id="fileType" name="fileType">
+            <option value="ifc">IFC (Industry Foundation Classes)</option>
+            <option value="rdf">RDF (Resource Description Framework)</option>
+          </select>
+        </div>
+      <button type="submit" class="btn btn-primary" onclick="event.stopPropagation()">Upload</button>
+       </form>
+    </dialog>
+
+    <!-- Bottom Drawer for sparql Query and results -->
+    <div id="footerSlideContainer">
+      <div id="footerSlideContent">
+        <div id="footerSlideText">
+          <form method="post" id="sparqlForm" class="mb-4">
+            <div class="form-group">
+              <label for="sparqlQuery" class="form-label">Enter SPARQL Query</label>
+              <textarea name="sparqlQuery" id="sparqlQuery" class="form-control" rows="8"
+                placeholder="Write your SparQL Query here"></textarea>
+            </div>
+            <button type="button" id="runQuery" class="mt-2 bg-[#5f9ea0] text-white text-base p-2 rounded font-bold">Run Query</button>
+            <button type="button" id="constructQuery" class="mt-2 bg-[#5f9ea0] text-white text-base p-2 rounded font-bold">Visualize Graph</button>
+          </form>
+          <!-- SPARQL Results display -->
+          <div class="form-group" id="sparql-results">
+            <label for="sparqlResults" class="form-label">SPARQL Query Results:</label>
+            <textarea id="sparqlResults" class="form-control" rows="8" readonly></textarea>
+          </div>
+          <!-- Visualization Div -->
+          <div id="d3-vis">
+          </div>
+           
+        </div>
+      </div>
+    </div>
+
+
+    <!-- END FOR ROOT CONTAINER -->
+  </div>
+
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- JavaScript for handling SPARQL query submission and result display -->
+  <script>
+    document.getElementById('runQuery').addEventListener('click', function () {
+      const sparqlQuery = document.getElementById('sparqlQuery').value;
+
+      fetch('/run_sparql', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `sparqlQuery=${encodeURIComponent(sparqlQuery)}`,
+      })
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('sparqlResults').value = data.results;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+  </script>
+  <script>
+    $(function () {
+      var open = false;
+      $('#footerSlideButton').click(function () {
+        if (open === false) {
+          $('#footerSlideContent').animate({ height: '400px' });
+          $(this).css('backgroundPosition', 'bottom left');
+          open = true;
+        } else {
+          $('#footerSlideContent').animate({ height: '0px' });
+          $(this).css('backgroundPosition', 'top left');
+          open = false;
+        }
+      });
+    });
+  </script>
+  <script src="/javascript/bundle.js"></script>
+</body>
+
+</html>
